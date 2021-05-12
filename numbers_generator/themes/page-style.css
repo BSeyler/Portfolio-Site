@@ -1,0 +1,52 @@
+/*
+ * Bradley Seyler,
+ * 12/9/2017
+ * page-style.css
+ * This file contains CSS for numbers_generator.html
+ * Any styles that are not in here, are defined by the
+ * JQuery UI 
+*/
+
+.p{
+	line-height: 80%;
+}
+	
+body {
+	background-image: url("images/binary.png");
+	background-size: 1000 px 1000px;
+}
+
+.data-entry{
+	float: left;	
+}
+
+.soundboard {
+	border: solid;
+	background-color: gray;
+	height: 225;
+	width: 225;
+	float:left;
+}
+		
+.button {
+	table-layout: fixed;
+	border-collapse: collapse;
+	background-color: #abacad;
+	border: solid;
+	border-color: #d9d9d9;
+	border-style: outset;
+	color: black;
+	padding: 15px 45px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+}
+		
+.page-link {
+	line-height:80%;
+	border-style: solid;
+	border-top-left-radius: 16px;
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+	border-bottom-left-radius: 16px;
+}

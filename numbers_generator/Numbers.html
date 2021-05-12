@@ -1,0 +1,183 @@
+<!-- Bradley Seyler, 12/9/2017, numbers_generator.html-->
+<!-- This file contains a page which allows the user to generate numbers messages,
+	And information on various numbers stations-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Numbers Station Generator</title>
+		
+		<link rel="stylesheet" href="themes/jquery-ui.css">
+		<link rel="stylesheet" href="themes/page-style.css">
+		
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	</head>
+	<body>
+	
+		<div id="tabs">
+			<!--The following ul is a list of the tabs!-->
+			<ul>
+				<li><a href="#tabs-1">Enter a Message!</a></li>
+				<li><a href="#tabs-2">Soundboard</a></li>
+				<li><a href="#tabs-3">Speech Options</a></li>
+				<li><a href="#tabs-4">Info</a></li>
+				<li><a href="#tabs-5">Sample Format of a Number Broadcast</a></li>
+				<li><a href="#tabs-6">Interesting Links</a></li>
+			</ul>
+			
+			<!--Below is the first tab. It is the message generator-->
+			<div id="tabs-1">			
+				<div style="width: 100%; overflow: hidden;">
+					<div style="width: 400px; float: left;">
+						<p id="lang-location1">Current language is G01</p>
+						<p>Enter call-sign below:</p>
+						<!--The user enters their call-sign below-->
+						<input id="call-sign">
+							
+						<p>Enter number of call-signs below:</p>
+						<!--The user enters the number of times the call-sign should loop below-->
+						<input id="call-sign-nums">
+							
+						<p>Enter Message below</p>
+						<input id="message">
+						<button id="btn-read">Read Message</button>	
+					</div>
+						
+					<div style="margin-left: 500px;"> 
+						<p>This Message Generator is designed to work with messages in groups of 5. This means that using a message like "12345 56789" is recommended.</p>
+						<p>Using more than 5 numbers in a group may cause glitches to occur, and I've never seen a numbers station use more than groups of 5 anyways.<p>
+						<p>If you want to use a trennung to divide message groups, I recommend using the follow format: "12345_/_67890" in which the underscore is a space. / may not work in some languages. If this is the case, a error sound will be played.</p>
+						<p>Info on this per langauge will show up on the sound board page.</p>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--This tab contains a soundboard. Each button has an ID that represents the sound the button is supposed to play.-->
+			<div id="tabs-2">
+				<div>
+						<button class="button" id="btn-1" style="align:left;">1</button>
+						<button class="button" id="btn-2" style="align:center;">2</button>
+						<button class="button" id="btn-3" style="align:right;">3</button>
+				</div>
+				<div>
+						<button class="button" id="btn-4">4</button>
+						<button class="button" id="btn-5">5</button>
+						<button class="button" id="btn-6">6</button>
+				</div>
+				<div>
+						<button class="button" id="btn-7">7</button>
+						<button class="button" id="btn-8">8</button>
+						<button class="button" id="btn-9">9</button>				
+				</div>
+				<div>
+					<button class="button" id="btn-achtung">*</button>
+					<button class="button" id="btn-0">0</button>
+					<button class="button" id="btn-trennung">/</button>
+				</div>	
+				<p>Please note that * represents a phrase/noise that is broadcasted prior to the message being broadcast. / represents an announced space between groups. These will vary between languages,
+				and may not be available for the selected language. What these represent in the current language will be displayed below.</p>
+				<p id="astrict-slash-text">In G06, * will say "Achtung"(ready in German), and / will say "trennung" (A slash in German)</p>
+			</div>
+		
+			<!--This tab has options for the user to change the language of the message generator--> 
+			<div id="tabs-3">
+					<h1>Options</h1>
+					<h2>Select a Language to use for speech: </h2>
+					<label for="radio-1">G06</label>
+					<input class="radio" type="radio" name="radio-1" id="radio-1" checked="checked">
+					<label for="radio-2">E07 (English Man 000 000)</label>
+					<input class="radio" type="radio" name="radio-1" id="radio-2">
+			</div>
+			
+			<div id = "tabs-4">
+				<h3>What is a numbers station?</h3>
+				<p>Numbers stations are mysterious radio stations that broadcast numbers in various formats at seemingly regular intervals. The Conet Project,
+				one of the largest collections of recorded numbers stations, describes them as "radio broadcasts that appear in
+				the Shortwave bands twenty-four hours a day, on many different frequencies. They are used to transmit short text messages."</p>
+				<a href="audio-samples/bbcr4-short.wav">Click here to hear a short exerpt from the BBC radio program "Tracking the Lincolnshire Poacher" which explains what Numbers Stations are</a>
+				<br>
+				
+				<h3>What is the purpose of these "numbers stations"?</h3>
+				<p>The common belief among shortwave radio enthusiasts is that these stations are used to broadcast news/inteligence to spies in foreign countries. In at least one case (S05 OLX) this has been confirmed to be true. The Czech government has had no fear in admitting to running their station to send inteligence out to agents in the field.</p>
+				<br>
+				
+				<h3>How many langauages do these stations broadcast in? If there are more than two, why do you only have two languages available to use in the generator?</h3>
+				<p>Numbers stations broadcast in many, many languages. English, German, and Slavic are the major langauges. As for the second question, it is very hard to get clear audio samples for each station, and I put in the clips I could put in that weren't being buzzed out</p>
+				<br>
+				
+				<h3>Why do people (and you) find such an interest in these stations?</h3>
+				<p>People are intrigued by these stations because they are strange stations that really have yet to be explained or even confirmed by the governments that people believe to broadcasting them</p>
+				<br>
+				
+				<h3>What are some of your favorite numbers stations?</h3>
+				<p>My favorite stations have to be the Lincolnshire Poacher, Swedish Rhapsody, and Gongs and Chimes. Sadly, most of these stations have been off the air for decades. Sound files of these can be found in the "Links" tab.</p>
+				<p>The Lincolnshire Poacher is the first station I had heard of, and it is probably the most famous of them all.</p>
+				<p>I always find Swedish funny since its call-sign sounds like an ice cream truck, but then begins this creepy voice. I imagine it scared many kids.</p>
+				<p>Gongs and Chimes was a channel that had a call-sign which was a tape of a bell being struck 8 times. This is clear in the earlier recordings of this station (in the early 80's), but by the early 90's when the station met it's end, the recording has been stretched to the point it sounds extremely sinster. To make it better the final transmission, on May 9, 1990, was the station operators who seem to be drunk, singing a German kids song. What a way to go out.</p>
+			</div>
+			
+			<!--This tab contains a sample broadcast for a numbers station-->
+			<div id="tabs-5">
+				<h3>Below is a sample broadcast for the G06 German Lady Numbers Station: </h3>
+				<img src="images/sample-schedule-G06-priyom.png" alt="G06 Sample">
+				<p style="font-size: 10px;">Broadcast sample taken from Priyom.org</p>
+			</div>
+			
+			<div id="tabs-6">
+				<div class="page-link">
+					<br>
+					<a href="audio-samples/bbcr4.mp3">Tracking the Lincolnshire Poacher</a>
+					<p>This is a BBC Radio Program that goes into depth on the Lincolnshire Poacher Numbers Station</p>
+				</div>
+				
+				<br>
+				
+				<div class="page-link">
+					<br>
+					<a href="http://www.priyom.org">Priyom.org</a>
+					<p>An excellent site that has a near complete list of numbers stations, complete with audio clips of transmissions and logs of what occured during them, along with a schedule which is accurate nearly down to the second of when many numbers stations will begin broadcasting.</p>
+				</div>
+				
+				<br>
+				
+				<div class="page-link">
+					<br>
+					<a href="enigma2000.org.uk/">Enigma 2000</a>
+					<p>This is the website of the group which assigns ID's to each number station which has been documented. The Enigma 2000 group produces a two-monthly newsletter which catalouges the activity of numbers stations, as well as oddities on the short wave.</p>
+				</div>
+				
+				<br>
+				
+				<div class="page-link">
+					<br>
+					<a href="https://www.youtube.com/watch?v=KOgXaT8q_-w">Youtube video showing a Stasi Sprach/Morse Machine in action</a>
+					<br>
+				</div>
+				
+				<br>
+				
+				<div class="page-link">
+					<br>
+					<p>Below are the sound clips mentioned in the info tab (Thanks to <a href="http://www.numbersoddities.nl/">Numbers and Oddities</a> for the recordings!)</p>
+					<a href="E03-2004-09-23-1404utc-by_tING.mp3">Lincolnshire Poacher recording from 9/23/2004</a>	
+					<br>
+					<a href="G03-1983-03-06-1800utc.mp3">Gongs and Chimes recording from 3/06/1983</a>	
+					<br>
+					<a href="G03-1987-03-08-2130utc.mp3">Gongs and Chimes recording from 3/08/1987</a>
+					<br>
+					<a href="G03-1990-05-23-last-transmission.mp3">Gongs and Chimes recording from 5/23/1990 (Final Broadcast)</a>
+					<br>
+					<a href="G02-1987-08-23-1300utc.mp3">Swedish Rhapsody recording from 8/23/1987</a>						
+				</div>
+			</div>
+		</div>
+		
+		<audio id="audio" src="sounds/1.wav" ></audio>
+		
+		<!--Below are my two JS files which run the page. There are no scripts defined below the body.-->
+		<script src="javascript/JQueryUIScripts.js"></script>
+		<script src="javascript/SpeechFiles.js"></script>
+	</body>
+</html>
